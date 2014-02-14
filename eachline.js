@@ -147,6 +147,9 @@ Transformer.prototype._transform = function(chunk, encoding, done) {
 			else {
 				xform.remnant = chunk.slice(start);
 			}
+			if(!xform.remnant.length) {
+				delete xform.remnant;
+			}
 
 			return done();
 		}
